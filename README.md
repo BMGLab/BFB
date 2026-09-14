@@ -19,37 +19,35 @@ reference sheets. Everything here is yours to read, run, print and keep.
 
 ## Weekly material
 
-Each week has a slide deck (`.pptx`) and a lab notebook (`.ipynb`).
+Each week has a slide deck and, from W01 onward, a lab notebook. The badge opens the notebook
+in Google Colab — nothing to download, nothing to install.
 
-| Week | Topic |
-|---|---|
-| W00 | The biology and numbers bridge |
-| W01 | From a biological question to defensible evidence |
-| W02 | Files, coordinates and reference versions |
-| W03 | Reading and checking short Python programs |
-| W04 | Sequence similarity without overclaiming |
-| W05 | From sample to reads: designing an experiment |
-| W06 | Variation, independence and multiple testing |
-| W07 | RNA counts, normalization and defensible expression claims |
-| W08 | Midterm review and the evidence audit |
-| W09 | Patterns, prediction and data leakage |
-| W10 | Single cells and biological replication |
-| W11 | Biological AI and the honest model scorecard |
-| W12 | Protein structures: prediction, confidence and function |
-| W13 | From a variant to an evidence-based sentence |
-| W14 | Responsible bioinformatics and your scientific record |
+| Week | Topic | Slides | Lab |
+|---|---|---|---|
+| W00 | The biology and numbers bridge | [pdf](W00_The_biology_and_numbers_bridge.pdf) · [pptx](W00_The_biology_and_numbers_bridge.pptx) | — |
+| W01 | From a biological question to defensible evidence | [pptx](W01_From_a_biological_question_to_defensible_evidence.pptx) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/BMGLab/BFB/blob/main/W01_From_a_biological_question_to_defensible_evidence.ipynb) |
+| W02 | Files, coordinates and reference versions | [pptx](W02_Files__coordinates_and_reference_versions.pptx) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/BMGLab/BFB/blob/main/W02_Files__coordinates_and_reference_versions.ipynb) |
+| W03 | Reading and checking short Python programs | [pptx](W03_Reading_and_checking_short_Python_programs.pptx) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/BMGLab/BFB/blob/main/W03_Reading_and_checking_short_Python_programs.ipynb) |
+| W04 | Sequence similarity without overclaiming | [pptx](W04_Sequence_similarity_without_overclaiming.pptx) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/BMGLab/BFB/blob/main/W04_Sequence_similarity_without_overclaiming.ipynb) |
+| W05 | From sample to reads: designing an experiment | [pptx](W05_From_sample_to_reads__designing_an_experiment.pptx) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/BMGLab/BFB/blob/main/W05_From_sample_to_reads__designing_an_experiment.ipynb) |
+| W06 | Variation, independence and multiple testing | [pptx](W06_Variation__independence_and_multiple_testing.pptx) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/BMGLab/BFB/blob/main/W06_Variation__independence_and_multiple_testing.ipynb) |
+| W07 | RNA counts, normalization and defensible expression claims | [pptx](W07_RNA_counts__normalization_and_defensible_expression_claims.pptx) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/BMGLab/BFB/blob/main/W07_RNA_counts__normalization_and_defensible_expression_claims.ipynb) |
+| W08 | Midterm review and the evidence audit | [pptx](W08_Midterm_review_and_the_evidence_audit.pptx) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/BMGLab/BFB/blob/main/W08_Midterm_review_and_the_evidence_audit.ipynb) |
+| W09 | Patterns, prediction and data leakage | [pptx](W09_Patterns__prediction_and_data_leakage.pptx) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/BMGLab/BFB/blob/main/W09_Patterns__prediction_and_data_leakage.ipynb) |
+| W10 | Single cells and biological replication | [pptx](W10_Single_cells_and_biological_replication.pptx) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/BMGLab/BFB/blob/main/W10_Single_cells_and_biological_replication.ipynb) |
+| W11 | Biological AI and the honest model scorecard | [pptx](W11_Biological_AI_and_the_honest_model_scorecard.pptx) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/BMGLab/BFB/blob/main/W11_Biological_AI_and_the_honest_model_scorecard.ipynb) |
+| W12 | Protein structures: prediction, confidence and function | [pdf](W12_Protein_structures__prediction__confidence_and_function.pdf) · [pptx](W12_Protein_structures__prediction__confidence_and_function.pptx) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/BMGLab/BFB/blob/main/W12_Protein_structures__prediction__confidence_and_function.ipynb) |
+| W13 | From a variant to an evidence-based sentence | [pptx](W13_From_a_variant_to_an_evidence_based_sentence.pptx) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/BMGLab/BFB/blob/main/W13_From_a_variant_to_an_evidence_based_sentence.ipynb) |
+| W14 | Responsible bioinformatics and your scientific record | [pptx](W14_Responsible_bioinformatics_and_your_scientific_record.pptx) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/BMGLab/BFB/blob/main/W14_Responsible_bioinformatics_and_your_scientific_record.ipynb) |
 
 ## Running the notebooks
 
-Nothing needs installing. Open a notebook in Google Colab, then **File → Save a copy in Drive**
-before you start, so your work is saved to your own account:
+Click a Colab badge above, then immediately do **File → Save a copy in Drive**. Do that *first*:
+the badge opens a read-only view of the course copy, and without saving your own copy your work
+is lost when the tab closes. You need a Google account; a personal Gmail is fine.
 
-```
-https://colab.research.google.com/github/OWNER/REPO/blob/main/W01_From_a_biological_question_to_defensible_evidence.ipynb
-```
-
-Replace `OWNER/REPO` with this repository's address. You will need a Google account; a personal
-Gmail is fine.
+If Colab is unavailable, local Jupyter with Python 3.9 or newer works too — download the
+`.ipynb` from the file list above.
 
 Every notebook generates **your own dataset** from your course pseudonym, so your numbers will
 not match your classmates'. That is deliberate: a borrowed answer is a wrong answer, and the
