@@ -26,8 +26,13 @@ try:
 except ImportError:
     HAVE_PDF = False
 
-BANNER = re.compile(r"INSTRUCTOR ONLY|CONFIDENTIAL INSTRUCTOR|Assessment Keys|"
-                    r"answer key|marking scheme|model answer|partial-credit", re.I)
+# HARD: these appear only on instructor-only documents. Treat as a failure.
+BANNER = re.compile(r"INSTRUCTOR ONLY|CONFIDENTIAL INSTRUCTOR|Assessment Keys", re.I)
+# SOFT: worth a glance, but legitimate in student-facing prose — the handbook
+# says answer keys are not published, and saying so is not a leak. Reported
+# separately so a clean run stays clean and the report keeps its authority.
+SOFT = re.compile(r"answer key|marking scheme|model answer|partial-credit|"
+                  r"award \d+ marks?", re.I)
 STUDENT_NO = re.compile(r"\b05\d{8}\b")
 EMAIL = re.compile(r"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}", re.I)
 SECRET = re.compile(r"(api[_-]?key|secret|token|password)\s*[:=]\s*\S{12,}", re.I)
@@ -66,7 +71,7 @@ def main():
                    and p.name not in SELF
                    and p.name != ".DS_Store")
 
-    problems, unchecked = [], []
+    problems, soft, unchecked = [], [], []
     for path in files:
         rel = path.relative_to(root)
         body, ok = text_of(path)
@@ -79,6 +84,9 @@ def main():
             hit = pattern.search(body)
             if hit:
                 problems.append((rel, label, hit.group(0)[:60]))
+        hit = SOFT.search(body)
+        if hit:
+            soft.append((rel, hit.group(0)[:60]))
         for m in EMAIL.finditer(body):
             if not SKIP_EMAIL.search(m.group(0)):
                 problems.append((rel, "e-mail address", m.group(0)))
@@ -90,6 +98,11 @@ def main():
             print(f"  {rel}\n      {label}: {sample!r}")
     else:
         print("  no confidentiality banners, student numbers, e-mails or secrets found")
+    if soft:
+        print(f"\n  {len(soft)} mention(s) of assessment wording — check the context, "
+              f"these are usually fine:")
+        for rel, sample in soft:
+            print(f"      {rel}: {sample!r}")
     if unchecked:
         print(f"\n  {len(unchecked)} file(s) could not be read"
               f"{' (install pypdf for the PDF check)' if not HAVE_PDF else ''}:")
