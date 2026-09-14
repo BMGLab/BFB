@@ -89,5 +89,11 @@ about biology.
 
 ## Licence and reuse
 
-Teaching material prepared by Yasin Kaymaz, PhD, for Ege University. If you are an instructor
-elsewhere and want to reuse it, please get in touch first.
+Prepared by Yasin Kaymaz, PhD, for Ege University, and released under the
+[MIT Licence](LICENSE) — you may use, adapt and redistribute this material, including for
+teaching elsewhere, provided the copyright notice is kept. No attribution beyond that notice is
+required, though it is appreciated.
+
+Two things the licence does not cover. Figures reproduced from published papers remain under
+their original terms and are cited where they appear. And the datasets here are synthetic
+teaching material: reusing them is fine, citing them as evidence about biology is not.
