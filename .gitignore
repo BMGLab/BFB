@@ -1,0 +1,44 @@
+# ── Confidential: never publish ──────────────────────────────────────────
+# These live in ../instructor-private/ and must not be copied back in here.
+# The patterns are belt-and-braces: the real protection is that the files are
+# outside this directory, and the pre-commit hook refuses anything carrying
+# the "INSTRUCTOR ONLY" banner.
+Instructor_Guide.*
+Keys_and_Calibration.*
+*_PAPER.*
+Midterm_*
+Final_*
+*Gradebook*
+*answer*key*
+*marking*scheme*
+*solutions*
+
+# Anything a student must never see, by convention
+**/private/**
+**/instructor/**
+*CONFIDENTIAL*
+*INSTRUCTOR_ONLY*
+
+# Real student data
+*roster*
+*attendance*
+*Attendence*
+*grades*
+*marks*
+*.csv.private
+
+# ── Working files ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+~$*                 # Office lock files
+*.tmp
+*.bak
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Student submissions, if any ever land here
+submissions/
+grading/

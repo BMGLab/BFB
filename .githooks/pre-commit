@@ -1,0 +1,102 @@
+#!/usr/bin/env python3
+"""
+pre-commit — refuse to commit instructor-only material.
+
+Enable once:   git config core.hooksPath .githooks
+
+WHAT THIS CAN AND CANNOT DO
+The exam papers and answer keys carry an "INSTRUCTOR ONLY" banner on page 1,
+but their PDFs encode text with subsetted fonts, so the banner is NOT findable
+by scanning the bytes. Content scanning therefore cannot be trusted for PDFs —
+a hook relying on it would pass a live exam paper and give false comfort.
+
+So the rule enforced here is by FILENAME, which is deterministic and cannot
+silently fail. Content is scanned too, but only as a bonus for the formats
+where it actually works (text, notebooks, and Office XML).
+
+The real protection is structural: confidential files live in
+../instructor-private/, outside this repository.
+
+For a thorough pre-push audit that does read PDF text, run  tools/audit_repo.py
+"""
+import re
+import subprocess
+import sys
+import zipfile
+from pathlib import Path
+
+# Filenames that must never be committed. Matched case-insensitively against
+# the whole path, so a file moved into a subfolder is still caught.
+DENY_NAME = re.compile(r"""
+      instructor            # Instructor_Guide, instructor-notes, ...
+    | keys?[_-]and[_-]calib
+    | _paper\.             # Midterm_A_PAPER.pdf, Final_B_PAPER.docx
+    | \bmidterm
+    | \bfinal_[ab]\b
+    | gradebook
+    | answer[_-]?key
+    | marking[_-]?scheme
+    | \bsolutions?\b
+    | \broster\b
+    | attend[ae]nce
+    | \bgrades?\b
+""", re.I | re.X)
+
+# Content banner — reliable for text and Office XML, not for PDF.
+DENY_TEXT = re.compile(rb"INSTRUCTOR ONLY|CONFIDENTIAL INSTRUCTOR|Assessment Keys", re.I)
+
+SCANNABLE = {".txt", ".md", ".ipynb", ".py", ".csv", ".json", ".html"}
+OFFICE = {".docx", ".pptx", ".xlsx"}
+
+# The guard tooling necessarily contains the very strings it searches for.
+SELF = {"audit_repo.py", "pre-commit", ".gitignore"}
+
+
+def body(path):
+    suffix = path.suffix.lower()
+    try:
+        if suffix in OFFICE:
+            with zipfile.ZipFile(path) as z:
+                return b"".join(z.read(n) for n in z.namelist() if n.endswith(".xml"))
+        if suffix in SCANNABLE:
+            return path.read_bytes()[:400_000]
+    except Exception:
+        pass
+    return b""
+
+
+def main():
+    staged = subprocess.run(
+        ["git", "diff", "--cached", "--name-only", "--diff-filter=ACMR"],
+        capture_output=True, text=True, check=True).stdout.split()
+
+    blocked = []
+    for name in staged:
+        path = Path(name)
+        if path.name in SELF:
+            continue
+        if DENY_NAME.search(name):
+            blocked.append((name, "filename looks like instructor-only material"))
+        elif path.is_file() and DENY_TEXT.search(body(path)):
+            blocked.append((name, "contains an INSTRUCTOR ONLY banner"))
+
+    if not blocked:
+        return 0
+
+    print("\nCommit stopped — these files must not be published:\n")
+    for name, why in blocked:
+        print(f"  {name}\n      {why}")
+    print("""
+Confidential material belongs in ../instructor-private/, which is outside
+this repository. Move it there rather than deleting it.
+
+If this is genuinely a false positive — a lecture that merely discusses
+answer keys, say — commit once with:
+
+    git commit --no-verify
+""")
+    return 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())
