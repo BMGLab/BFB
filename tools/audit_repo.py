@@ -15,10 +15,18 @@ skipped and the report says so rather than pretending the file was clean.
     pip install pypdf        # optional, but the PDF check needs it
 """
 import json
+import logging
 import re
 import sys
+import warnings
 import zipfile
 from pathlib import Path
+
+# pypdf logs a line per malformed cross-reference entry. PowerPoint's exporter
+# produces these routinely and they are harmless, but a few hundred of them
+# bury the actual findings — which is the whole point of the report.
+warnings.filterwarnings("ignore")
+logging.getLogger("pypdf").setLevel(logging.ERROR)
 
 try:
     from pypdf import PdfReader
