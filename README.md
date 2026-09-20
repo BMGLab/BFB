@@ -8,17 +8,36 @@ reference sheets. Everything here is yours to read, run, print and keep.
 
 ---
 
-## Start here
+## First, in class: the Entry Diagnostic
+
+Scan this, or type the address underneath it.
+
+<a href="https://forms.gle/8d7q8LGjdiRKuv3j8">
+  <img src="Entry_Diagnostic_QR.png" width="300" alt="QR code for the Entry Diagnostic">
+</a>
+
+### **https://forms.gle/8d7q8LGjdiRKuv3j8**
+
+**Ungraded — it cannot affect your grade.** About fifteen minutes. No AI, no search, no notes.
+
+Twelve questions that tell me which refresher sections to spend time on. Please choose
+**"Not sure"** rather than guessing: a confident wrong answer and an honest "not sure" need
+different help from me, and I can only tell them apart if you are straight with me. You will see
+the correct answers and a short explanation the moment you submit.
+
+*Notlandırılmaz. Yaklaşık 15 dakika. Emin değilseniz tahmin etmek yerine "Emin değilim" seçin.*
+
+[Entry_Diagnostic.pdf](Entry_Diagnostic.pdf) is the same questions on paper, if you have no phone.
+
+## Then
 
 1. **[Student_Handbook.pdf](Student_Handbook.pdf)** — how the course runs, what is assessed,
    and the AI-use policy. Read this in week 1.
-2. **Entry Diagnostic** — an ungraded, fifteen-minute readiness check, done online in class.
-   Your instructor will give you the link. It does not affect your grade; it tells you which
-   bridge sections to read, and you get the answers and explanations the moment you submit.
-   [Entry_Diagnostic.pdf](Entry_Diagnostic.pdf) is the same questions on paper, if you would
-   rather work through them offline.
-3. **[W00_The_biology_and_numbers_bridge.pdf](W00_The_biology_and_numbers_bridge.pdf)** — the
+2. **[W00_The_biology_and_numbers_bridge.pdf](W00_The_biology_and_numbers_bridge.pdf)** — the
    refresher. No previous genetics or programming is assumed.
+3. **[W01](W01_From_a_biological_question_to_defensible_evidence.pdf)** and its
+   [lab notebook](https://colab.research.google.com/github/BMGLab/BFB/blob/main/W01_From_a_biological_question_to_defensible_evidence.ipynb)
+   — the first week proper.
 
 ## Weekly material
 
