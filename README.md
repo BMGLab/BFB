@@ -8,36 +8,20 @@ reference sheets. Everything here is yours to read, run, print and keep.
 
 ---
 
-## First, in class: the Entry Diagnostic
+## Start here
 
-Scan this, or type the address underneath it.
-
-<a href="https://forms.gle/8d7q8LGjdiRKuv3j8">
-  <img src="Entry_Diagnostic_QR.png" width="300" alt="QR code for the Entry Diagnostic">
-</a>
-
-### **https://forms.gle/8d7q8LGjdiRKuv3j8**
-
-**Ungraded — it cannot affect your grade.** About fifteen minutes. No AI, no search, no notes.
-
-Twelve questions that tell me which refresher sections to spend time on. Please choose
-**"Not sure"** rather than guessing: a confident wrong answer and an honest "not sure" need
-different help from me, and I can only tell them apart if you are straight with me. You will see
-the correct answers and a short explanation the moment you submit.
-
-*Notlandırılmaz. Yaklaşık 15 dakika. Emin değilseniz tahmin etmek yerine "Emin değilim" seçin.*
-
-[Entry_Diagnostic.pdf](Entry_Diagnostic.pdf) is the same questions on paper, if you have no phone.
-
-## Then
-
-1. **[Student_Handbook.pdf](Student_Handbook.pdf)** — how the course runs, what is assessed,
+1. **[W00_The_biology_and_numbers_bridge.pdf](W00_The_biology_and_numbers_bridge.pdf)** — the
+   refresher, and the first thing we do together. No previous genetics or programming is assumed.
+   The last slide carries the link to the Entry Diagnostic, which we fill in during class.
+2. **[Student_Handbook.pdf](Student_Handbook.pdf)** — how the course runs, what is assessed,
    and the AI-use policy. Read this in week 1.
-2. **[W00_The_biology_and_numbers_bridge.pdf](W00_The_biology_and_numbers_bridge.pdf)** — the
-   refresher. No previous genetics or programming is assumed.
 3. **[W01](W01_From_a_biological_question_to_defensible_evidence.pdf)** and its
    [lab notebook](https://colab.research.google.com/github/BMGLab/BFB/blob/main/W01_From_a_biological_question_to_defensible_evidence.ipynb)
    — the first week proper.
+
+The **Entry Diagnostic** is an ungraded, fifteen-minute readiness check we do in class; the link
+is on the last slide of W00. It cannot affect your grade — it tells me which parts of the bridge
+to spend time on. [Entry_Diagnostic.pdf](Entry_Diagnostic.pdf) is the same questions on paper.
 
 ## Weekly material
 
