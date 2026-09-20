@@ -12,8 +12,11 @@ reference sheets. Everything here is yours to read, run, print and keep.
 
 1. **[Student_Handbook.pdf](Student_Handbook.pdf)** — how the course runs, what is assessed,
    and the AI-use policy. Read this in week 1.
-2. **[Entry_Diagnostic.pdf](Entry_Diagnostic.pdf)** — an ungraded, fifteen-minute readiness
-   check. It does not affect your grade; it tells you which bridge sections to read.
+2. **Entry Diagnostic** — an ungraded, fifteen-minute readiness check, done online in class.
+   Your instructor will give you the link. It does not affect your grade; it tells you which
+   bridge sections to read, and you get the answers and explanations the moment you submit.
+   [Entry_Diagnostic.pdf](Entry_Diagnostic.pdf) is the same questions on paper, if you would
+   rather work through them offline.
 3. **[W00_The_biology_and_numbers_bridge.pdf](W00_The_biology_and_numbers_bridge.pdf)** — the
    refresher. No previous genetics or programming is assumed.
 

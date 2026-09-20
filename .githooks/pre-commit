@@ -45,7 +45,11 @@ DENY_NAME = re.compile(r"""
 # Content banner — reliable for text and Office XML, not for PDF.
 DENY_TEXT = re.compile(rb"INSTRUCTOR ONLY|CONFIDENTIAL INSTRUCTOR|Assessment Keys", re.I)
 
-SCANNABLE = {".txt", ".md", ".ipynb", ".py", ".csv", ".json", ".html"}
+# Anything whose bytes are readable text. Script formats matter here: an Apps
+# Script that builds a quiz carries the answer key, and .gs is not a suffix
+# anyone thinks to guard.
+SCANNABLE = {".txt", ".md", ".ipynb", ".py", ".csv", ".json", ".html",
+             ".gs", ".js", ".r", ".sh", ".applescript", ".yml", ".yaml"}
 OFFICE = {".docx", ".pptx", ".xlsx"}
 
 # The guard tooling necessarily contains the very strings it searches for.

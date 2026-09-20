@@ -62,7 +62,8 @@ def text_of(path):
         if suffix == ".ipynb":
             nb = json.loads(path.read_text(encoding="utf-8"))
             return "\n".join("".join(c.get("source", [])) for c in nb["cells"]), True
-        if suffix in (".md", ".txt", ".py", ".csv", ".json", ".html", ".yml", ".yaml"):
+        if suffix in (".md", ".txt", ".py", ".csv", ".json", ".html", ".yml", ".yaml",
+                      ".gs", ".js", ".ipynb", ".r", ".sh", ".applescript"):
             return path.read_text(encoding="utf-8", errors="ignore"), True
     except Exception as exc:
         return f"[unreadable: {exc}]", False
