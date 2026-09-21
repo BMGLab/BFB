@@ -74,7 +74,7 @@ except ImportError:  # pragma: no cover - Colab always has numpy
 # --------------------------------------------------------------------------
 
 SUBMIT_URL = ("https://script.google.com/macros/s/"
-              "AKfycbwo0dGNnVRggkWzOu35nCFbSXeefq_3CAXZE5oRBm9bQIbnkSYFuoUWoHkRsgHMLeQO/exec")
+              "AKfycbwf9zbTFxkRSIQLUxCJ88zQev6KA8rhpstEdpsL-D4soEAKRL6XxN0PQKxQ_rt0_hcM/exec")
 SUBMIT_TOKEN = "bib-2026"
 SUBMIT_MAX_MB = 8.0  # encoded size; Apps Script starts refusing well above this
 FORM_URL = ""        # the manual-upload Google Form, printed whenever upload fails
