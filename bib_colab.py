@@ -77,7 +77,11 @@ SUBMIT_URL = ("https://script.google.com/macros/s/"
               "AKfycbwf9zbTFxkRSIQLUxCJ88zQev6KA8rhpstEdpsL-D4soEAKRL6XxN0PQKxQ_rt0_hcM/exec")
 SUBMIT_TOKEN = "bib-2026"
 SUBMIT_MAX_MB = 8.0  # encoded size; Apps Script starts refusing well above this
-FORM_URL = ""        # the manual-upload Google Form, printed whenever upload fails
+# Where a student goes when the upload fails. Set FORM_URL to a Google Form if
+# you make one; otherwise the fallback names the LMS, which is where these
+# notebooks sent work before one-click submission existed.
+FORM_URL = ""
+FALLBACK_PLACE = "the Week's assignment on EgeDers"
 
 
 # --------------------------------------------------------------------------
@@ -973,8 +977,7 @@ class Assignment:
             print("Usually that means one cell printed thousands of lines, or a")
             print("figure was drawn hundreds of times in a loop. Clear that cell's")
             print("output (click the ⋮ beside it > Clear output) and run A.submit()")
-            print("again. If you cannot find it, use the form instead" +
-                  (f":\n  {FORM_URL}" if FORM_URL else "."))
+            print(f"again. If you cannot find it, upload the .ipynb to {FORM_URL or FALLBACK_PLACE}.")
             return None
 
         shown = f"{size_mb:.1f} MB" if size_mb >= 1 else f"{len(packed) / 1e3:.0f} KB"
@@ -1006,13 +1009,13 @@ class Assignment:
         reason = reply.get("error", "unknown") if isinstance(reply, dict) else "unknown"
         print("UPLOAD FAILED — but you have NOT lost your work.\n")
         print(textwrap.fill(f"  Reason: {reason}", 88, subsequent_indent="          "))
+        where = FORM_URL if FORM_URL else FALLBACK_PLACE
         print("\n  Do this instead, now, before you leave:")
         print("    1. File > Download > Download .ipynb")
-        print(f"    2. Upload it to the form{':' if FORM_URL else '.'}")
-        if FORM_URL:
-            print(f"       {FORM_URL}")
-        print(f"    3. Paste this receipt code into the form:  {receipt}")
-        print("\n  Then tell your instructor the upload button failed.")
+        print(f"    2. Upload that file to {where}")
+        print(f"    3. Put this receipt code in the submission comment:  {receipt}")
+        print("\n  Then tell your instructor the upload button failed —")
+        print("  you will not be penalised, but they need to know today.")
         return None
 
     # -- internals ---------------------------------------------------------
