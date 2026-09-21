@@ -995,6 +995,16 @@ class Assignment:
             "notebook_gz_b64": packed,
         })
 
+        # A reply must carry a ref to count as saved. Apps Script answers a POST
+        # with a redirect, and if the GET that follows it lands on doGet instead
+        # of the stored doPost result, the body is {"status":"ok", ...} with no
+        # ref — a shape that would otherwise print SUBMITTED over a submission
+        # that was never written. Seen once in testing; harmless now.
+        if ok and reply.get("status") == "ok" and not reply.get("ref"):
+            ok, reply = False, {"error": (
+                "the server acknowledged without saving anything (no reference "
+                "returned). Run A.submit() again — this is usually transient.")}
+
         if ok and reply.get("status") == "ok":
             print("=" * 62)
             print(f"  SUBMITTED.  Reference: {reply.get('ref', '?')}")
