@@ -1035,13 +1035,39 @@ class Assignment:
             raise RuntimeError("call A.whoami(name=..., student_no=..., section=...) first")
 
 
+# One Assignment per code per session. start() hands back the same object
+# rather than a fresh one, so calling it twice cannot lose an identity.
+_SESSION = {}
+
+
 def start(code):
-    """Begin an assignment. `code` is e.g. "A03"."""
-    a = Assignment(code)
+    """
+    Begin an assignment — or hand back the one already begun in this session.
+
+    Idempotent on purpose. A student who hits a NameError after a runtime
+    restart fixes it the obvious way: by pasting the setup block into whichever
+    cell failed, which is often the submit cell. If that call built a *fresh*
+    Assignment it would silently discard the identity whoami() had just set two
+    cells earlier, and submit() would refuse with "identity not set" over a
+    notebook that was completely finished. That happened in W01 on 2026-09-22
+    and cost a student a submission whose work was entirely done. Returning the
+    existing object makes the paste harmless.
+
+    Restarting the runtime still gives a clean slate, because the module dies
+    with it. Identity is deliberately NOT persisted to disk: a stale identity
+    surviving into the next notebook is a worse failure than this one.
+    """
+    a = _SESSION.get(code)
+    if a is None:
+        a = _SESSION[code] = Assignment(code)   # raises on an unknown code
     spec = a.spec
     print(f"BIB {code} — {spec['title']}  ({spec['points']} points)")
     print(f"Questions to answer: {', '.join('Q' + str(q) for q in spec['questions'])}")
-    print("\nNext: fill in the A.whoami(...) cell below.")
+    if a.student:
+        s = a.student
+        print(f"\nIdentified as {s['name']}  |  {s['student_no']}  |  section {s['section']}")
+    else:
+        print("\nNext: fill in the A.whoami(...) cell below.")
     return a
 
 
