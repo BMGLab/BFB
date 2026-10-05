@@ -146,7 +146,7 @@ ASSIGNMENTS = {
     },
     "W03": {
         "title": "Reading and checking short Python programs",
-        "questions": [1, 2, 3],
+        "questions": [1, 2, 3, 4, 5],
         "structured": {},
         "answers_from": "responses",
         "integrity_keys": [],
