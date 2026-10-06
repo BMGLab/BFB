@@ -46,6 +46,23 @@ installed. From W01 onward there is also a lab notebook; the badge opens it in G
 | W13 | From a variant to an evidence-based sentence | [pdf](W13_From_a_variant_to_an_evidence_based_sentence.pdf) · [pptx](W13_From_a_variant_to_an_evidence_based_sentence.pptx) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/BMGLab/BFB/blob/main/W13_From_a_variant_to_an_evidence_based_sentence.ipynb) |
 | W14 | Responsible bioinformatics and your scientific record | [pdf](W14_Responsible_bioinformatics_and_your_scientific_record.pdf) · [pptx](W14_Responsible_bioinformatics_and_your_scientific_record.pptx) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/BMGLab/BFB/blob/main/W14_Responsible_bioinformatics_and_your_scientific_record.ipynb) |
 
+## Lecture slides
+
+The slides shown in the lecture hall, as PDF.
+
+| Week | Lecture | Slides |
+|---|---|---|
+| W01 | What is left for a bioengineer to do | [pdf](lectures/week-01-what-is-left-to-do.pdf) |
+| W02 | Biological data as files: builds, coordinates, and silent failure | [pdf](lectures/week-02-biological-data-as-files.pdf) |
+| W03 | Reading code you did not write | [pdf](lectures/week-03-reading-code-you-did-not-write.pdf) |
+| W04 | Comparing sequences: exact, heuristic, learned | [pdf](lectures/week-04-comparing-sequences-exact-heuristic-learned.pdf) |
+| W05 | From molecule to reads: sequencing, coverage and quality | [pdf](lectures/week-05-from-molecule-to-reads.pdf) |
+| W06 | Significance, and the unit you are counting | [pdf](lectures/week-06-significance-and-the-unit-you-are-counting.pdf) |
+| W07 | Expression: counts, normalisation, and differential expression | [pdf](lectures/week-07-expression-counts-normalisation-and-differential-expression.pdf) |
+| W08 | Midterm | — |
+| W09 | Patterns and prediction: clustering, classification, leakage | [pdf](lectures/week-09-patterns-and-prediction-clustering-classification-leakage.pdf) |
+| Special | Optogenetics: a light switch for nerve cells — the 2026 Nobel Prize in Physiology or Medicine | [pdf](lectures/special-optogenetics-nobel-2026.pdf) |
+
 ## Running the notebooks
 
 Click a Colab badge above, then immediately do **File → Save a copy in Drive**. Do that *first*:
