@@ -61,6 +61,11 @@ The slides shown in the lecture hall, as PDF.
 | W07 | Expression: counts, normalisation, and differential expression | [pdf](lectures/week-07-expression-counts-normalisation-and-differential-expression.pdf) |
 | W08 | Midterm | — |
 | W09 | Patterns and prediction: clustering, classification, leakage | [pdf](lectures/week-09-patterns-and-prediction-clustering-classification-leakage.pdf) |
+| W10 | Single cells: the matrix, the clusters, and the statistic that breaks | [pdf](lectures/week-10-single-cells-the-matrix-the-clusters-and-the-statistic-that-breaks.pdf) |
+| W11 | Learned models of biology: atlases, foundation models, and the honest scorecard | [pdf](lectures/week-11-learned-models-of-biology-atlases-foundation-models-and-the-honest-scorecard.pdf) |
+| W12 | Predicted structures and the numbers that say do not trust me | [pdf](lectures/week-12-predicted-structures-and-the-numbers-that-say-do-not-trust-me.pdf) |
+| W13 | From a variant to a sentence somebody acts on | [pdf](lectures/week-13-from-a-variant-to-a-sentence-somebody-acts-on.pdf) |
+| W14 | Responsibility: the law, the disclosure, and your name on it | [pdf](lectures/week-14-responsibility-the-law-the-disclosure-and-your-name-on-it.pdf) |
 | Special | Optogenetics: a light switch for nerve cells — the 2026 Nobel Prize in Physiology or Medicine | [pdf](lectures/special-optogenetics-nobel-2026.pdf) |
 
 ## Running the notebooks
