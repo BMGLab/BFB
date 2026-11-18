@@ -8,8 +8,8 @@ file and use File > Upload notebook. Now that it is on GitHub, Colab can open a
 notebook straight from the repository, which removes the step where a student
 ends up editing a stale copy from their Downloads folder.
 
-    python3 tools/add_colab_badges.py --repo BMGLab/BFB
-    python3 tools/add_colab_badges.py --repo BMGLab/BFB --check   # report only
+    python3 tools/add_colab_badges.py --repo YOUR_GITHUB_ACCOUNT/BFB
+    python3 tools/add_colab_badges.py --repo YOUR_GITHUB_ACCOUNT/BFB --check
 
 Re-running is safe: an existing badge is replaced rather than duplicated, so
 this can be run again if the repository ever moves.
@@ -28,8 +28,8 @@ NEW_PROSE = ("Open it in Colab with the badge above, then **File > Save a copy i
              "before you start so your work is kept. Run the cells from top to bottom.")
 
 
-def badge(repo, name, branch):
-    url = f"https://colab.research.google.com/github/{repo}/blob/{branch}/{name}"
+def badge(repo, notebook_path, branch):
+    url = f"https://colab.research.google.com/github/{repo}/blob/{branch}/{notebook_path}"
     return f"[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]({url})"
 
 
@@ -41,14 +41,14 @@ def as_lines(text):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--repo", required=True, help="owner/name, e.g. BMGLab/BFB")
+    ap.add_argument("--repo", required=True, help="owner/name of the published repository")
     ap.add_argument("--branch", default="main")
     ap.add_argument("--check", action="store_true", help="report without writing")
     args = ap.parse_args()
 
     root = Path(__file__).resolve().parent.parent
     changed = []
-    for path in sorted(root.glob("*.ipynb")):
+    for path in sorted((root / "notebooks").glob("*.ipynb")):
         nb = json.loads(path.read_text(encoding="utf-8"))
         if not nb.get("cells"):
             print(f"  skip (no cells): {path.name}")
@@ -61,7 +61,8 @@ def main():
         text = "".join(first.get("source", []))
         text = BADGE_RE.sub("", text)                    # drop any previous badge
         text = OLD_PROSE.sub(NEW_PROSE, text)            # fix the stale instruction
-        text = f"{badge(args.repo, path.name, args.branch)}\n\n{text.lstrip()}"
+        notebook_path = path.relative_to(root).as_posix()
+        text = f"{badge(args.repo, notebook_path, args.branch)}\n\n{text.lstrip()}"
         first["source"] = as_lines(text)
 
         if args.check:
